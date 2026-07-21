@@ -74,7 +74,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git vscode)
 
 source $ZSH/oh-my-zsh.sh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # User configuration
 
@@ -105,7 +104,6 @@ alias activate419=". ~/.virtualenvs/cpsc419/bin/activate"
 alias activate474=". ~/.virtualenvs/cpsc474/bin/activate"
 alias activateExpenses=". ~/.virtualenvs/shared_expenses/bin/activate"
 alias activateQfl=". ~/.virtualenvs/qfl/bin/activate"
-export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 alias navCode='cd ~/Desktop/Coding'
 alias activateFinal='source ~/.virtualenvs/474Final/bin/activate'
 alias activateLeet='. ~/.virtualenvs/leet/bin/activate'
@@ -113,36 +111,38 @@ alias zrefresh='source ~/.zshrc'
 alias activate467='source ~/.virtualenvs/467/bin/activate'
 alias activateBaseball='source ~/Desktop/CPSC490/code/setup.sh'
 alias activateFinance='source ~/.virtualenvs/Finance/bin/activate'
-export NVM_DIR="$HOME/.nvm"
-[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion		
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 alias activateCopper='source ~/.virtualenvs/copper/bin/activate'
 alias activateWork='source ~/.virtualenvs/work/bin/activate'
 alias activateMoon='source ~/.virtualenvs/moon/bin/activate'
-export PATH=$PATH:~/WorkRoot/utils
-
-
-export PATH=/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/usr/bin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/utils/bin
-echo "Done."
-
 alias activateETL='source ~/.virtualenvs/ETLParser/bin/activate'
-alias cddesktop='cd /Users/jackoconnor/iCloudDrive/Desktop'
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/jackoconnor/.lmstudio/bin"
-# End of LM Studio CLI section
+# --- macOS-only setup (Homebrew, Android SDK, Docker, LM Studio) ---
+if [[ "$OSTYPE" == darwin* ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+  export PATH="/opt/homebrew/opt/qt@5/bin:/opt/homebrew/opt/postgresql@15/bin:$PATH"
+  export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/cmdline-tools/latest/bin"
+  export PATH="$PATH:$HOME/.lmstudio/bin"
 
-export PATH=/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/usr/bin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/utils/bin:~/go/bin
-export PATH=/opt/homebrew/Caskroom/miniconda/base/envs/data-integrations/bin:/opt/homebrew/Caskroom/miniconda/base/condabin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/usr/bin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/utils/bin:/Users/jackoconnor/go/bin:/Users/jackoconnor/.local/bin
-export PATH=/opt/homebrew/Caskroom/miniconda/base/envs/data-integrations/bin:/opt/homebrew/Caskroom/miniconda/base/condabin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/jackoconnor/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/opt/qt@5/bin:/usr/local/opt/python/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/usr/bin:/Users/jackoconnor/Library/Android/sdk/tools:/Users/jackoconnor/Library/Android/sdk/platform-tools:/Users/jackoconnor/Library/Android/sdk/cmdline-tools/latest/bin:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/WorkRoot/utils:/Users/jackoconnor/utils/bin:/Users/jackoconnor/go/bin:/Users/jackoconnor/.local/bin:/Users/jackoconnor/.docker/bin
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/jackoconnor/.docker/completions $fpath)
+  alias cddesktop='cd ~/iCloudDrive/Desktop'
+
+  [ -s "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && \
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  fpath=(~/.docker/completions $fpath)
+fi
+
+# --- Shared PATH additions (all platforms) ---
+export PATH="$PATH:$HOME/WorkRoot/utils:$HOME/go/bin:$HOME/.local/bin"
+
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
 
+# nvm (works whether installed via the official script or Homebrew)
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+if ! command -v nvm >/dev/null 2>&1 && [ -n "$HOMEBREW_PREFIX" ]; then
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
+fi
 

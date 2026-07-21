@@ -12,7 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm alias default "v24.13.0" > /dev/null 2>&1 
 
-export PATH=$PATH:/home/jackoconnor/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # If not running interactively, don't do anything
 case $- in
