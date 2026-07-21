@@ -1,0 +1,3 @@
+[terminal.shell]
+program = "C:\\Windows\\System32\\wsl.exe"
+args = ["-d", "Ubuntu-26.04", "--cd", "~", "-e", "zsh"]
